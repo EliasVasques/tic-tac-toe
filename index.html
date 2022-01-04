@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font nixie one -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>tic-tac-toe</title>
+</head>
+<body>
+    <h1>Tic Tac Toe!</h1>
+
+    <div class="points">
+        <h3>vitórias do X: <span id="pointsX">0</span></h3>
+        <h3>vitórias do 0: <span id="points0">0</span></h3>
+    </div>
+
+    <h2 id="situation">jogo em andamento</h2>
+    <div class="row">
+        <div id="one" onclick="putSign(this)"></div>
+        <div id="two" onclick="putSign(this)"></div>
+        <div id="three" onclick="putSign(this)"></div>
+    </div>
+    <class class="row">
+        <div id="four" onclick="putSign(this)"></div>
+        <div id="five" onclick="putSign(this)"></div>
+        <div id="six" onclick="putSign(this)"></div>
+    </class>
+    <class class="row">
+        <div id="seven" onclick="putSign(this)"></div>
+        <div id="eight" onclick="putSign(this)"></div>
+        <div id="nine" onclick="putSign(this)"></div>
+    </class>
+
+    <div class="buttons">
+        <button onclick="nextRound()">Jogar Novamente</button>
+        <button onclick="resetPoints()">Zerar Pontos</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

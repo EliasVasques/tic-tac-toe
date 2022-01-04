@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+
+    font-family: 'Nixie One', cursive;
+    font-weight: bold;
+    text-align: center;
+}
+
+.row {
+    display: flex;   
+    justify-content: center;
+}
+
+.row div {
+    width: 100px;
+    height: 100px;
+
+    line-height: 100px;
+    font-size: 25px;
+}
+
+.points {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* buttons */
+.buttons button {
+    margin-top: 50px;
+    padding: 5px;
+    width: 125px;
+}
+
+/* BORDAS */
+#two, #five, #eight {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+#four, #six, #five {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
