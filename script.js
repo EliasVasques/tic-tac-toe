@@ -40,28 +40,28 @@ const nextRound = () => {
 }
 
 const checkIfWon = () => {
-    let oneSign = document.getElementById('one').innerHTML;
-    let twoSign = document.getElementById('two').innerHTML;
-    let threeSign = document.getElementById('three').innerHTML;
-    let fourSign = document.getElementById('four').innerHTML;
-    let fiveSign = document.getElementById('five').innerHTML;
-    let sixSign = document.getElementById('six').innerHTML;
-    let sevenSign = document.getElementById('seven').innerHTML;
-    let eightSign = document.getElementById('eight').innerHTML;
-    let nineSign = document.getElementById('nine').innerHTML;
-
-    if (oneSign == sign) { // linha 1 e coluna 1
-        if ((oneSign == twoSign && twoSign == threeSign) || (oneSign == fourSign && fourSign == sevenSign)) { 
+    let signs = [];
+    for (let nameId of namesIds) {
+        signs.push(document.getElementById(nameId).innerHTML);
+    }
+    //console.log(signs);
+    if (signs[0] == sign) { // linha 1 e coluna 1
+        if ((signs[0] == signs[1] && signs[1] == signs[2]) 
+         || (signs[0] == signs[3] && signs[3] == signs[6])) { 
             return true;
         }
     } 
-    if (fiveSign == sign) { // tranversais e centrais
-        if ((oneSign == fiveSign && fiveSign == nineSign) || (threeSign == fiveSign && fiveSign == sevenSign) || (twoSign == fiveSign && fiveSign == eightSign) || (fourSign == fiveSign && fiveSign == sixSign)) {
+    if (signs[4] == sign) { // tranversais e centrais
+        if ((signs[0] == signs[4] && signs[4] == signs[8]) 
+         || (signs[2] == signs[4] && signs[4] == signs[6])
+         || (signs[1] == signs[4] && signs[4] == signs[7])
+         || (signs[3] == signs[4] && signs[4] == signs[5])) {
             return true;
         }
     }
-    if (nineSign == sign) { // 3 linha e 3 coluna
-        if ((sevenSign == eightSign && eightSign == nineSign) || (threeSign == sixSign && sixSign == nineSign)) {
+    if (signs[8] == sign) { // 3 linha e 3 coluna
+        if ((signs[6] == signs[7] && signs[7] == signs[8]) 
+         || (signs[2] == signs[5] && signs[5] == signs[8])) {
             return true;
         }
     }
