@@ -35,11 +35,11 @@ body {
 }
 
 /* BORDAS */
-#two, #five, #eight {
+.two, .five, .eight {
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
 }
-#four, #six, #five {
+.four, .five, .six {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }

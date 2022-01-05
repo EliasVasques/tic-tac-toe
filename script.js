@@ -16,13 +16,13 @@ const putSign = (div) => {
 
 const updates = () => {
     if (checkIfWon()) {
-        document.getElementById('situation').innerHTML = `Jogador ${sign} venceu!`;
+        document.querySelector('.situation h2').innerHTML = `Jogador ${sign} venceu!`;
         inGame = false;
 
         let winnerPoints = document.querySelector('#points' + sign);
         winnerPoints.innerHTML = Number(winnerPoints.innerHTML) + 1;
     } else if (tie()) {
-        document.getElementById('situation').innerHTML = `Empate!`;
+        document.querySelector('.situation h2').innerHTML = `Empate!`;
         inGame = false;
     }
 }
@@ -33,18 +33,25 @@ const resetPoints = () => {
 }
 
 const nextRound = () => { 
-    for (let nameId of namesIds) {
-        document.getElementById(nameId).innerHTML = '';
+    let cells = document.querySelectorAll('.cell');
+    for (let cell of cells) {
+        cell.innerHTML = '';
     }
     inGame = true;
 }
 
-const checkIfWon = () => {
+const getSigns = () => {
+    let cells = document.querySelectorAll('.cell');
     let signs = [];
-    for (let nameId of namesIds) {
-        signs.push(document.getElementById(nameId).innerHTML);
+    for (let cell of cells) {
+        signs.push(cell.innerHTML);
     }
-    //console.log(signs);
+    return signs;
+}
+
+const checkIfWon = () => {
+    let signs = getSigns();
+    
     if (signs[0] == sign) { // linha 1 e coluna 1
         if ((signs[0] == signs[1] && signs[1] == signs[2]) 
          || (signs[0] == signs[3] && signs[3] == signs[6])) { 
@@ -69,10 +76,7 @@ const checkIfWon = () => {
 }
 
 const tie = () => {
-    let signs = [];
-    for (let nameId of namesIds){
-        signs.push(document.getElementById(nameId).innerHTML);
-    }
+    let signs = getSigns();
     if (signs.filter(sign => sign == '').length == 0) {
         return true;
     }

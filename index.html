@@ -14,35 +14,44 @@
     <title>tic-tac-toe</title>
 </head>
 <body>
-    <h1>Tic Tac Toe!</h1>
+    <header>
+        <h1>Tic Tac Toe!</h1>
+    </header>
 
-    <div class="points">
-        <h3>vitórias do X: <span id="pointsX">0</span></h3>
-        <h3>vitórias do 0: <span id="points0">0</span></h3>
-    </div>
+    <main>
+        <section class="points">
+            <h3>vitórias do X: <span id="pointsX">0</span></h3>
+            <h3>vitórias do 0: <span id="points0">0</span></h3>
+        </section>
 
-    <h2 id="situation">jogo em andamento</h2>
-    <div class="row">
-        <div id="one" onclick="putSign(this)"></div>
-        <div id="two" onclick="putSign(this)"></div>
-        <div id="three" onclick="putSign(this)"></div>
-    </div>
-    <class class="row">
-        <div id="four" onclick="putSign(this)"></div>
-        <div id="five" onclick="putSign(this)"></div>
-        <div id="six" onclick="putSign(this)"></div>
-    </class>
-    <class class="row">
-        <div id="seven" onclick="putSign(this)"></div>
-        <div id="eight" onclick="putSign(this)"></div>
-        <div id="nine" onclick="putSign(this)"></div>
-    </class>
+        <section class="situation">
+            <h2>jogo em andamento</h2>
+        </section>
 
-    <div class="buttons">
-        <button onclick="nextRound()">Jogar Novamente</button>
-        <button onclick="resetPoints()">Zerar Pontos</button>
-    </div>
+        <section class="board">
+            <div class="row">
+                <div class="cell" onclick="putSign(this)"></div>
+                <div class="cell two" onclick="putSign(this)"></div>
+                <div class="cell" onclick="putSign(this)"></div>
+            </div>
+            <class class="row">
+                <div class="cell four" onclick="putSign(this)"></div>
+                <div class="cell five" onclick="putSign(this)"></div>
+                <div class="cell six" onclick="putSign(this)"></div>
+            </class>
+            <class class="row">
+                <div class="cell" onclick="putSign(this)"></div>
+                <div class="cell eight" onclick="putSign(this)"></div>
+                <div class="cell" onclick="putSign(this)"></div>
+            </class>
+        </section>
 
+        <section class="buttons">
+            <button onclick="nextRound()">Jogar Novamente</button>
+            <button onclick="resetPoints()">Zerar Pontos</button>
+        </section>
+
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
